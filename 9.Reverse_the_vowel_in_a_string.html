@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Reverse the vowel in a string
+    </title>
+</head>
+
+<body>
+    <script>
+      var str=prompt("Enter a string : ");
+      console.log(reverseVowel(str));
+      function isVowel(char) {
+          return(char=="a" || char=="i" ||char=="e" ||char=="o" 
+                    ||char=="u"||char=="A"||char=="I"||char=="O" 
+                    || char=="E" || char=="U")
+      }
+      function reverseVowel(str) {
+          let start=0;
+          let end=str.length-1;
+          let str1=str.split("");
+          debugger;
+          while(start<end) {
+              if(!isVowel(str1[start])) {
+                start++;
+                continue;
+              }
+            if(!isVowel(str1[end])) {
+                  end--;
+                  continue;
+              }
+              let temp=str1[start];
+              str1[start]=str1[end];
+              str1[end]=temp;
+
+              start++;
+              end--;
+          }
+       let str2=(str1).join("");
+       return str2;
+      }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncommon Word from two sentence</title>
+</head>
+
+<body>
+    <script>
+        var str1 = "this apple is sweet";
+        var str2 = "this apple is sour";
+        var str3 = str1.concat(" " + str2);
+        console.log(str3);
+        var word1 = [],
+            word2 = [];
+        word1 = str1.split(" ");
+
+        console.log(word1);
+
+        word2 = str2.split(" ");
+
+        console.log(word2);
+        var word;
+        word = word1.concat(word2);
+        console.log(word);
+        var uncommon_word = [],
+            common_word = [];
+        for (var i = 0; i < word.length; i++) {
+            if (common_word.indexOf(word[i]) == -1) {
+                common_word.push(word[i]);
+            } else {
+                uncommon_word.push(word[i]);
+            }
+        }
+        console.log("Common Words");
+        console.log(common_word);
+        console.log("Uncommon Words")
+        console.log(uncommon_word)
+
+        function RemoveCommon(word1, word2) {
+            var word = word1.concat(word2);
+            return word.filter(element => {
+                return !(word1.includes(element) && word2.includes(element))
+            })
+        }
+        console.log(RemoveCommon(word1, word2))
+
+        // const removeCommon = (word1, word2) => {
+        //     const spreaded = [...word1, ...word2];
+        //     return spreaded.filter(el => {
+        //         return !(word1.includes(el) && word2.includes(el));
+        //     })
+        // };
+        // console.log(removeCommon(word1, word2));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort the array by parity , even number at the beginning of the array</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 23, 4, 6, 61, 8];
+        var temp;
+        console.log(SortEvenArrayAtLeftEnd(arr));
+        console.log(SortEvenNumberAtBeginning(arr));
+
+        function SortEvenArrayAtLeftEnd(arr) {
+            var i, j, oddArr = [],
+                EvenArr = [],
+                ResultantArr = [],
+                Result = [];
+            for (i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 0) {
+                    EvenArr += arr[i] + " "
+
+                } else {
+                    oddArr += arr[i] + " ";
+
+                }
+            }
+            Result = EvenArr.concat(oddArr);
+            return Result;
+
+        }
+
+        function SortEvenNumberAtBeginning(arr) {
+            var right = arr.length - 1;
+            var left = 0;
+            debugger;
+            for (i = 0; i < arr.length; i++) {
+                while (arr[left] % 2 == 0) {
+                    left++;
+                }
+                while (arr[right] % 2 == 1) {
+                    right--;
+                }
+                if (left < right) {
+                    temp = arr[left];
+                    arr[left] = arr[right];
+                    arr[right] = temp;
+                }
+            }
+            return arr;
+
+        }
+    </script>
+</body>
+
+</html>

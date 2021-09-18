@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Palindrome Number
+        </title>
+        <body>
+            <script>
+                var num=parseInt(prompt("Enter a number"));
+               console.log(ReverseNumber(num));
+               if(num==ReverseNumber(num)) {
+                   console.log(`${num} is a palindrome`)
+               }
+               else if(num!=ReverseNumber(num)) {
+                console.log(`${num} is not a palindrome`)
+               }
+               
+                function ReverseNumber(num) {
+                var reverse = 0,
+                remainder;
+            while (num > 0) {
+                remainder = num % 10;
+                reverse = reverse * 10 + remainder;
+                num = parseInt(num / 10);
+            }
+            while (num < 0) {
+                remainder = num % 10;
+                //console.log(`remainder>>>` + remainder)
+                reverse = reverse * 10 + remainder;
+                //console.log(`reverse>>>` + reverse)
+                num = parseInt(num / 10);
+                //console.log(`num/10>>` + num)
+            }
+            return reverse;
+
+           
+        }
+       
+             </script>
+        </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Contains Duplicate elements or not
+        </title>
+    </head>
+    <body>
+        <script>
+             var arr=[];
+            var size=parseInt(prompt("Enter the size : "));
+           
+            var i;
+            for(i=0;i<size;i++) {
+                arr[i]=parseInt(prompt(`Enter the elements : ${(i+1)}` ))
+            }
+            console.log(arr);
+            console.log(DuplicateElements(arr)) 
+            function DuplicateElements(arr) {
+                 if(new Set(arr).size==arr.length) {
+                     return true;
+                 }
+                return false;
+                
+            }
+        </script>
+    </body>
+</html>
